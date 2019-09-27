@@ -32,10 +32,8 @@ def post():
 	form = PostForm()
 	if form.validate_on_submit():
 		postData = Posts(
-			first_name=form.first_name.data,
-			last_name=form.last_name.data,
 			title=form.title.data,
-			content=form.content.data
+			content=form.content.data,
 			author=current_user
 		)
 		db.session.add(postData)

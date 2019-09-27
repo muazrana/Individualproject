@@ -8,11 +8,9 @@ def load_user(id):
 
 class Posts(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	first_name = db.Column(db.String(30), nullable=False)
-	last_name = db.Column(db.String(30), nullable=False)
 	title = db.Column(db.String(100), nullable=False)
 	content = db.Column(db.String(10000), nullable=False, unique=True)
-	date_posted = db.Column(db.datetime, nullable=False, default=datetime.utcnow)
+	date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
@@ -24,8 +22,8 @@ class Posts(db.Model):
 
 class Users(db.Model, UserMixin):
 	id = db.Column(db.Integer, primary_key=True)
-	first_name = db.Column(db.string(30), nullable=False)
-	last_name = db.Column(db.string(30), nullable=False)
+	first_name = db.Column(db.String(30), nullable=False)
+	last_name = db.Column(db.String(30), nullable=False)
 	email = db.Column(db.String(150), nullable=False, unique=True)
 	password = db.Column(db.String(50), nullable=False)
 	posts = db.relationship('Posts', backref='author', lazy=True)

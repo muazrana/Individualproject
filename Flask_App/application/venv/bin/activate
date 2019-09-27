@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelavent variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/rana/Documents/Flask_App/venv"
+VIRTUAL_ENV="/home/rana/Documents/Myblog/Flask_App/application/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
