@@ -78,4 +78,13 @@ def account():
 		form.last_name.data = current_user.last_name
 	return render_template('account.html', title='Account', form=form)
 
+@app.route("/update", methods=['GET', 'POST'])
+def update():
+	newtitle = request.form.get("newtitle")
+	oldtitle = request.form.get("oldtitle")
+	book = Posts.query.filter_by(title=oldtitle).first()
+	book.title = newtitle
+	db.session.commit()
+	return redirect("/")
+
 	

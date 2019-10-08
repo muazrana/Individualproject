@@ -8,6 +8,11 @@
 			<span>by <i>{{ post.author.first_name }} {{ post.author.last_name }}</i></span>
 			<span>on the <i>{{ post.date_posted }}</i></span>
 			<p> {{ post.content }}</p>
+			<form method="POST" action=" ./update">
+				<input type="hidden" value="{{post.title}}" name="oldtitle">
+				<input type ="text" value="{{post.title}}" name="newtitle">
+				<input type="submit" value="Update">
+			</form>
 		</div>
 	{% endfor %}
 
