@@ -20,6 +20,12 @@
 
 				<input type="submit" value="Update">
 			</form>
+
+			<form method="POST" action="./delete">
+				<input type="hidden" value="{{post.title}}" name="title">
+				<input type="hidden" value="{{post.content}}" name="content">
+				<input type="submit" value="delete">
+			</form>
 		</div>
 	{% endfor %}
 

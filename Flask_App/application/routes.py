@@ -132,4 +132,14 @@ def update():
 	db.session.commit()
 	return redirect("/home")
 
+@app.route("/delete", methods=["POST"])
+def delete():
+	title = request.form.get("title")
+	book= Posts.query.filter_by(title=title).first()
+	content = request.form.get("content")
+	book= Posts.query.filter_by(content=content).first()
+	db.session.delete(book)
+	db.session.commit()
+	return redirect("/home")
+
 	

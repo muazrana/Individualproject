@@ -5,18 +5,6 @@ from application.models import Users
 from flask_login import current_user
 
 class PostForm(FlaskForm):
-	first_name = StringField('First_Name',
-		validators=[
-			DataRequired(),
-			Length(min=4, max=30)
-		])
-
-	last_name = StringField('Last_Name',
-		validators=[
-			DataRequired(),
-			Length(min=4, max=30)
-		])
-
 	title = StringField('Title',
 		validators=[
 			DataRequired(),
