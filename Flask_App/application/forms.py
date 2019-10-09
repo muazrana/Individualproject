@@ -26,10 +26,11 @@ class PostForm(FlaskForm):
 	content = StringField('Content',
 		validators=[
 			DataRequired(),
-			Length(min=50, max=10000)
+			Length(min=10, max=10000)
 		])
 
 	submit = SubmitField('Post Content')
+
 
 class RegistrationForm(FlaskForm):
 	first_name = StringField('First Name',
@@ -110,3 +111,17 @@ class UpdateAccountForm(FlaskForm):
 		else:
 			raise ValidationError('TEST')
 
+class UpdatePostForm(FlaskForm):
+	title = StringField('Title',
+		validators=[
+			DataRequired(),
+			Length(min=4, max=30)
+		])
+
+	content = StringField('Content',
+		validators=[
+			DataRequired(),
+			Length(min=10, max=10000)
+		])
+
+	submit = SubmitField('Update')

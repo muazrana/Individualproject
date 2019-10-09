@@ -1,16 +1,23 @@
 {% extends "layout.html" %}
 {% block body_content %}
-	<h1>Home Page</h1>
-	<p>Welcome to the book store!</p>
+	<h1>Welcome to your own book store</h1>
+	<p>Here you can see some amazing books being recommended by everyone!</p>
 	{% for post in posts %}
 		<div>
 			<h3>{{ post.title }}</h3>
-			<span>by <i>{{ post.author.first_name }} {{ post.author.last_name }}</i></span>
-			<span>on the <i>{{ post.date_posted }}</i></span>
 			<p> {{ post.content }}</p>
+			<span>Recomended by <i>{{ current_user.first_name }} {{ current_user.last_name }}</i></span>
+			<br>
+			<span>on the <i>{{ post.date_posted }}</i></span>
 			<form method="POST" action=" ./update">
 				<input type="hidden" value="{{post.title}}" name="oldtitle">
 				<input type ="text" value="{{post.title}}" name="newtitle">
+		
+				
+				<input type="hidden" value="{{post.content}}" name="oldcontent">
+				<input type="text" value="{{post.content}}" name="newcontent">
+
+
 				<input type="submit" value="Update">
 			</form>
 		</div>

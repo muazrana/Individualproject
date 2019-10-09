@@ -52,6 +52,26 @@ def login():
 		user = Users.query.filter_by(email=form.email.data).first()
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember.data)
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print(current_user.first_name)
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
+			print("---------------------------------------------")
 			next_page = request.args.get('next')
 			if next_page:
 				return redirect(next_page)
@@ -68,23 +88,48 @@ def logout():
 @login_required
 def account():
 	form = UpdateAccountForm()
-	if form.validate_on_submit:
-		current_user.first_name = form.first_name.data
-		current_user.last_name = form.last_name.data
-		current_user.email = form.email.data
-	elif request.method == 'GET':
+	if request.method == 'GET':
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print(current_user.first_name)
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
+		print("---------------------------------------------")
 		form.email.data = current_user.email
 		form.first_name.data = current_user.first_name
 		form.last_name.data = current_user.last_name
+	elif form.validate_on_submit:
+		current_user.first_name = form.first_name.data
+		current_user.last_name = form.last_name.data
+		current_user.email = form.email.data  
+		db.session.commit()
 	return render_template('account.html', title='Account', form=form)
 
-@app.route("/update", methods=['GET', 'POST'])
+@app.route("/update", methods=["POST"])
 def update():
 	newtitle = request.form.get("newtitle")
 	oldtitle = request.form.get("oldtitle")
 	book = Posts.query.filter_by(title=oldtitle).first()
 	book.title = newtitle
+	newcontent = request.form.get("newcontent")
+	oldcontent = request.form.get("oldcontent")
+	book = Posts.query.filter_by(content=oldcontent).first()
+	book.content = newcontent
 	db.session.commit()
-	return redirect("/")
+	return redirect("/home")
 
 	
