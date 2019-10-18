@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block body_content %}
-	<h1>Login Page</h1>
-	<p>Welcome to this web app please Login!</p>
+<body background="static/manybook.jpg">
+	<h3><font size="10" color="white">Login To Your Book Store</font></h3>
+	<p style="background-color: #AB4217"><font size="4" color="FCE5E2">Log in to view million of reviews on over thousdands of books and leave a review on a book of your own choice as well</font></p></span>
 	<div class="form">
 		<form method="POST" action="">
 			{{ form.hidden_tag() }}
@@ -40,4 +41,6 @@
 		</form>
 	</div>
 
+	<!--<center><img src="static/manybook.jpg" alt="Importance of Reading Books!" height="500" width="900"></center> -->
+</body>
 {% endblock body_content %}

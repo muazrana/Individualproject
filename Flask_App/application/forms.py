@@ -8,7 +8,7 @@ class PostForm(FlaskForm):
 	title = StringField('Title',
 		validators=[
 			DataRequired(),
-			Length(min=4, max=30)
+			Length(min=4, max=10000)
 		])
 
 	content = StringField('Content',
