@@ -113,3 +113,4 @@ class UpdatePostForm(FlaskForm):
 		])
 
 	submit = SubmitField('Update')
+

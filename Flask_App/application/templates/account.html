@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block body_content %}
-	<h1>{{ current_user.first_name }} {{ current_user.last_name }}</h1>
-	<p>Update your details</p>
+	<body bgcolor="#FFFFFF">
+	<h3><font size="7" color="black">{{ current_user.first_name }} {{ current_user.last_name }}</font></h3>
+	<p><font size="4" color="black">Update your details</font></p>
 	<div class="form">
 		<form method="POST" action="">
 			{{ form.hidden_tag() }}
@@ -46,5 +47,5 @@
 			</div>
 		</form>
 	</div>
-
+	<center><img src="static/account.png" alt="update your details" height="500" width="750"></center>
 {% endblock body_content %}
