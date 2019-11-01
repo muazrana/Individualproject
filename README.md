@@ -13,7 +13,7 @@ The user can post review update and delete their posts. It has been mainly built
   2. Make sure you check beforehand whether or not python3 and pythonadm has permission to access the documents or not. If there is        no permission granted, this can be done by writing the code and entering the file by "sudo visudo" and further input: 
     
     __jenkins ALL=(ALL:ALL) NOPASSWD:ALL__
-     __pythonadm ALL=(ALL:ALL) NOPASSWD:ALL__
+    __pythonadm ALL=(ALL:ALL) NOPASSWD:ALL__
   
  # Using Docker
   1. Docker can be uploaded to your machine using __curl https://get.docker.com | sudo bash__
