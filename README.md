@@ -16,4 +16,4 @@ The user can post review update and delete their posts. It has been mainly built
  # Using Docker
   1. Docker can be uploaded to your machine using __curl https://get.docker.com | sudo bash__
   2. Once its installed you can run using the code, to build an image, __docker build -t flask-app .__
-  3. Next step after writing the code above to run it is __docker run -d -p 5000:5000 flask-app __
+  3. Next step after writing the code above to run it is __docker run -d -p 5000:5000 flask-app__
