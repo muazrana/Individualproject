@@ -12,8 +12,8 @@ pipeline{
     					if [ "$(sudo docker ps -aq -f status=exited -f name=flask-app)" ]; then
        				 		# cleanup
         					sudo docker rm -f flask-app
-    					fi
-    					# run your container
+    					fi'''
+    					
 
 		        }
 		}	
