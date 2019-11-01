@@ -1,6 +1,11 @@
 pipeline{
         agent any
         stages{ 
+		stage ('---cd---'){
+			steps{ 
+				sh "cd Flask_App"
+			}
+		}
 		stage('---Build_Image---'){
 			steps{
                         	sh "sudo docker build -t flask-app ."
