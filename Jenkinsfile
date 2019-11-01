@@ -9,16 +9,13 @@ pipeline{
                 stage('---clean---'){
                         steps{
                               sh label: '', script: '''if [ "$(sudo docker ps -q -f name=flask-app)" ]; then
-    					if [ "$(sudo docker ps -aq -f status=exited -f name=flask-app)" ]; then
-       				 		# cleanup
-        					sudo docker rm -f flask-app
-    					fi'''
-    					
-
-		        }
+    					#cleanup
+					sudo docker rm -f flask-app
+    				fi'''
+   			 }
 		}	
-			stage('---Build_Container---'){  
-			  Steps{		
+		stage('---Build_Container---'){  
+			Steps{		
 				sh "sudo docker run -d --name flask-app -p 5000:5000 flask-app"
 				
                         }
