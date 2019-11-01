@@ -3,9 +3,10 @@ An application where people can come up and get decent ideas on what book to rea
 The user can post review update and delete their posts. It has been mainly built in python language using Flask webframework. 
 
 # Prerequisite 
-  1. Make sure you have __python3__ installed on your VM
-  2. Install __pip3__
-  3. Clone this repository to your machine
+  1. Make sure the very first thing you do is __"sudo apt-get update"__
+  2. Make sure you have __python3__ installed on your VM
+  3. Install __pip3__
+  4. Clone this repository to your machine
   
  # Making Jenkins run it
   1. Add a user calling it pythonadm this can be done using the code "__sudo useradd -a -s /bin/bash pythonadm__"
